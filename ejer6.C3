@@ -22,19 +22,22 @@ Rcuerde que ExprBoole, Sentencia1 y Sentencia2, generan su propio C3.
 
 */
 
-ID = NUM1
-t1 = 2
+t1 = NUM1  // Son números enteros, debemos almacenar en una var temp
+t2 = NUM2
+t3 = NUM3
+t4 = 2
+ID = t1
 E1:
-    t2 = ID mod t1
-    t3 = (t2 = 0)  // Es par
-    if (t3 = 0) => goto E2
-        C3-Sentencia1
+    t5 = ID mod t4
+    if (t6 = 1) => goto E2
+        C3-Sentencia1  // Es par
         goto E3
     E2: // Es impar
         C3-Sentencia2
-    ID = ID + NUM3
-    t4 = (ID > NUM2)
-    C3-ExprBoole(t5)
-    t6 = t4 or t5
-    if (t6 = 0) => goto E1 // Vuelve a iterar
+    E3:
+    ID = ID + t3  // ID = ID + NUM3
+    t6 = (ID > t2)  // ID > 2
+    C3-ExprBoole(t7)
+    t8 = t6 or t7
+    if (t8 = 0) => goto E1 // Vuelve a iterar
 
